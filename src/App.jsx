@@ -1,6 +1,6 @@
 import './styles/App.css'
 import { Outlet } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function App() {
 
@@ -8,9 +8,17 @@ function App() {
   return (
     <>
       <header>
-        <Link to="/">Home Page</Link>
-        <Link to="shopPage">Shop page</Link>
-        <Link to="cart">Cart page</Link>
+        <nav>
+          <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>
+            Home Page
+          </NavLink>
+          <NavLink to="shopPage" className={({ isActive }) => isActive ? "active-link" : ""}>
+            Shop Page
+          </NavLink>
+          <NavLink to="cart" className={({ isActive }) => isActive ? "active-link" : ""}>
+            Cart Page
+          </NavLink>
+        </nav>
       </header>
       <main>
         <Outlet/>
