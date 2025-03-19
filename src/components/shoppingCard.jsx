@@ -14,9 +14,17 @@ export const ShoppingCard= () => {
                     }
                     return response.json()
                 })
-                // Filtramos solo los que tengan product_type === "sneakers"
+                // Filtramos solo los que tengan product_type === "sneakers" y tambien filtramos solo los datos que necesitemos para optimizar mas el codigo
                 .then(data => {
-                    const filtredData=data.data.filter(item=>item.product_type==="sneakers")
+                    const filtredData=data.data
+                        .filter(item=>item.product_type==="sneakers")
+                        .map(item => ({
+                            id: item.id,
+                            image: item.image,
+                            title: item.title,
+                            avg_price: item.avg_price
+                        }));
+
                     setSneakers(filtredData)
                 })
                 .catch((error) => setError(error))
@@ -37,6 +45,10 @@ export const ShoppingCard= () => {
                 sneakers.map((sneaker)=>(
                     <article key={sneaker.id}>
                         <img style={{width:"300px", height:"200px"}} src={sneaker.image} alt={"Image of" + sneaker.title} />
+                        <section>
+                            <p>{sneaker.title}</p>
+                            <p>{`${sneaker.avg_price.toFixed(2)} €`}</p> {/**toFixed quita todos los demas decimales mostrando en este caso solo 2 */}
+                        </section>
                     </article>
                 ))
             }
