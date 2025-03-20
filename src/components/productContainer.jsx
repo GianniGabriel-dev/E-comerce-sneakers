@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { options } from "../config"
+import { Slider } from "./360_Slider";
 
 export const ProductContainer = ({id})=>{
     const [sneaker, setSneaker]= useState(null);
     const[error, setError]= useState(null)
     const[loading, setLoading]= useState(true)
+    const [imagesLoaded, setImagesLoaded] = useState(false);
     
     useEffect(()=>{
         const fetchProductById= async()=>{
@@ -33,14 +35,30 @@ export const ProductContainer = ({id})=>{
         }
         
     },[id])
-    if(error) return <p>The sneaker cant upload</p>
-    if(loading) return <p>Loading...</p>
+
+    const preloadImages = () => {
+        if (!sneaker || !sneaker.gallery_360) return;
+        const images = sneaker.gallery_360.map((src) => {
+          const img = new Image();
+          img.src = src;
+          return new Promise((resolve) => {
+            img.onload = resolve;
+          });
+        });
+        
+        // Esperar a que todas las imágenes se hayan cargado
+        Promise.all(images)
+          .then(() => setImagesLoaded(true))
+          .catch((error) => console.error("Error loading images:", error));
+      };
+      preloadImages()
+    
+      if (error) return <p>The sneaker can't be loaded</p>;
+      if (loading || !imagesLoaded) return <p>Loading...</p>;
     return(
-        <section>
-            <figure ><img  style={{width:"300px",height:"200px" }}  src={sneaker.gallery_360[0]}alt="" srcset="" /></figure>
-            <figure ><img style={{width:"300px",height:"200px" }}   src={sneaker.gallery_360[9]}alt="" srcset="" /></figure>
-            <figure ><img  style={{width:"300px",height:"200px" }}  src={sneaker.gallery_360[19]}alt="" srcset="" /></figure>
-            <figure ><img  style={{width:"300px",height:"200px" }}  src={sneaker.gallery_360[27]}alt="" srcset="" /></figure>
-        </section>
+        <Slider
+            imageArray={sneaker.gallery_360}
+            productName={sneaker.title}
+        />
     )
 }
