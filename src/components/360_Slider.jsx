@@ -15,10 +15,10 @@ export const Slider=({imageArray,image, productName})=>{
             const mouseX = e.nativeEvent.offsetX; //Obtiene la cordenada del eje X donde esta pulsando el raton
             const width = e.target.offsetWidth; // Obtiene el ancho de la imagen
             const newIndex = Math.floor((mouseX / width) * imageArray.length); // Calcula el nuevo indice en base a la posición el cursor y el ancho de la iamge
-
-          
-                    setIndex(newIndex);
-                
+            // Actualizar el índice solo si ha cambiado
+             if (newIndex !== index) {
+                setIndex(newIndex);
+            }
         }
     };
 
@@ -39,7 +39,8 @@ export const Slider=({imageArray,image, productName})=>{
     return(
         <section>
             <figure>
-                <img draggable="false" src={imageArray.length > 0 ? imageArray[index] : image} 
+                {/*hay productos que no tienen la galeria de imágenes de 360, si este es el caso, se muestra solo un imagen y se oculta el input*/}
+                <img draggable="false" src={imageArray.length > 0 ? imageArray[index] : image}  
                 onMouseMove={handleMouseMove}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}

@@ -9,6 +9,7 @@ export const ProductContainer = ({id})=>{
     const [imagesLoaded, setImagesLoaded] = useState(false);
     
     useEffect(()=>{
+        //fetching of product by id of it
         const fetchProductById= async()=>{
             try{
                 const response= await fetch(`https://api.sneakersapi.dev/api/v3/stockx/products/${id}`, options)
@@ -68,10 +69,28 @@ export const ProductContainer = ({id})=>{
         if (error) return <p>The sneaker can't be loaded</p>;
         if (loading || !imagesLoaded) return <p>Loading...</p>;
     return(
-        <Slider
-            imageArray={sneaker.gallery_360}
-            image={sneaker.image}
-            productName={sneaker.title}
-        />
+        <section className="productContainer">
+            <Slider
+                imageArray={sneaker.gallery_360}
+                image={sneaker.image}
+                productName={sneaker.title}
+            />
+            <section className="dataOfProduct">
+                <article>
+                    <p>{sneaker.title}</p>
+                </article>
+                <article>
+                    <p>Buy now for:</p>
+                    <p>{sneaker.avg_price}</p>
+                    <div className="buttonContainer">
+                        <button>Add to cart</button>
+                    </div>
+                </article>
+                <article>
+                    <p>About this product</p>
+                    <p style={{textWrap:"wrap"}}>{sneaker.short_description}</p>
+                </article>
+            </section>
+        </section>
     )
 }

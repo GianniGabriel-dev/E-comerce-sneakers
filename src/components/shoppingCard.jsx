@@ -46,7 +46,7 @@ export const ShoppingCard= () => {
     },[page])
 
 
-    if(error) return <p>The sneakers cant appear</p>
+    if(error) return <p>Upss.... The sneakers cant load</p>
     if (loading) return <p>Loading...</p>
     return(
         <section style={{display:"flex", flexWrap:"wrap"}}>
@@ -58,6 +58,7 @@ export const ShoppingCard= () => {
                             <p>{sneaker.title}</p>
                             <p>{`${sneaker.avg_price.toFixed(2)} €`}</p> {/**toFixed quita todos los demas decimales mostrando en este caso solo 2 */}
                         </section>
+                        <button>Add to cart</button>
                     </article>
                 ))
             }
