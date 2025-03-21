@@ -20,6 +20,7 @@ export const ProductContainer = ({id})=>{
                     title: data.data.title,
                     gallery_360: data.data.gallery_360,
                     brand: data.data.brand,
+                    image: data.data.image,
                     avg_price: data.data.avg_price,
                     short_description: data.data.short_description,
                   };
@@ -35,29 +36,41 @@ export const ProductContainer = ({id})=>{
         }
         
     },[id])
+    useEffect(() => {
+        if (sneaker) {
+            console.log(sneaker);
+        }
+    }, [sneaker]);
 
-    const preloadImages = () => {
-        if (!sneaker || !sneaker.gallery_360) return;
-        const images = sneaker.gallery_360.map((src) => {
-          const img = new Image();
-          img.src = src;
-          return new Promise((resolve) => {
-            img.onload = resolve;
-          });
-        });
+//verificar si todas las iamgenes del array se han cargado    
+    useEffect(()=>{
+        const preloadImages = () => {
+            //Si las imágenes de los sneakers no han caragado se sale de la función
+            if (!sneaker || !sneaker.gallery_360) return;
+            //Recorrer el array y cargar todas las imágenes mediante promesas
+            const images = sneaker.gallery_360.map((src) => {
+            const img = new Image();
+            img.src = src;
+            return new Promise((resolve) => {
+                img.onload = resolve;
+            });
+            });
+            
+            // Esperar a que todas las imágenes se hayan cargado
+            Promise.all(images)
+            .then(() => setImagesLoaded(true))
+            .catch((error) => console.error("Error loading images:", error));
+        };
+        preloadImages()
+
+    },[sneaker])
         
-        // Esperar a que todas las imágenes se hayan cargado
-        Promise.all(images)
-          .then(() => setImagesLoaded(true))
-          .catch((error) => console.error("Error loading images:", error));
-      };
-      preloadImages()
-    
-      if (error) return <p>The sneaker can't be loaded</p>;
-      if (loading || !imagesLoaded) return <p>Loading...</p>;
+        if (error) return <p>The sneaker can't be loaded</p>;
+        if (loading || !imagesLoaded) return <p>Loading...</p>;
     return(
         <Slider
             imageArray={sneaker.gallery_360}
+            image={sneaker.image}
             productName={sneaker.title}
         />
     )

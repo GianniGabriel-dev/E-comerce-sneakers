@@ -5,7 +5,7 @@ export const ShoppingCard= () => {
     const [error, setError] = useState(null)
     const [sneakers, setSneakers]=useState([])
     const [loading, setLoading] = useState(true)
-    const [page, setPage]=useState(7) 
+    const [page, setPage]=useState(65) 
 
     const navigate = useNavigate();
         const handleClick=(id, name)=>{
