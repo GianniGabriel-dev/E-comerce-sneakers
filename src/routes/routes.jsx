@@ -21,7 +21,7 @@ const routes = [
         element: <ShopPage />, 
       },
       {
-        path: "/:productName/dp/:productId", //pagina que aparece al hacer click en un producto, a la url se le pasa su nombre e id
+        path: "/:productName/dp/:productId", //pagina que aparece al hacer click en un producto, a la url se le pasa su nombre e id, dp en la url significa detail page
         element: <ProductPage />, 
       },
       { path: "cart", element: <ShoppingCartPage /> },

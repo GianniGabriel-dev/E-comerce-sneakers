@@ -7,7 +7,9 @@ export const ShoppingCard= () => {
     const [loading, setLoading] = useState(true)
     const [page, setPage]=useState(1) 
     const navigate = useNavigate(); //se establece el useNavigate
-    const { handleProductToCart } = useOutletContext(); //
+
+    // Obtiene la función `handleProductToCart` del contexto del Outlet para manejar la adición de productos al carrito.
+    const { handleProductToCart } = useOutletContext(); 
 
 
 
@@ -64,7 +66,7 @@ export const ShoppingCard= () => {
                                 <p>{`${sneaker.avg_price.toFixed(2)} €`}</p> {/**toFixed quita todos los demas decimales mostrando en este caso solo 2 */}
                             </section>
                         </article>
-                        <button onClick={()=>handleProductToCart(sneaker.id)}>Add to cart</button>
+                        <button onClick={()=>handleProductToCart(sneaker.id , sneaker.image, sneaker.title, sneaker.avg_price)}>Add to cart</button>
                     </article>
                 ))
             }

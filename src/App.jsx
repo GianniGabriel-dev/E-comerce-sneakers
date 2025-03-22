@@ -9,8 +9,8 @@ function App() {
     const [cart, setCart ] = useState([]);
     const[cartCount, setCartCount] = useState(0)
 
-    const handleProductToCart= (id)=>{
-        addProduct(id, cart, setCart)
+    const handleProductToCart= (id, img, title, price)=>{
+        addProduct(id, img, title, price, cart, setCart)
         
     }
     useEffect(()=>{
@@ -37,7 +37,7 @@ function App() {
         </nav>
       </header>
       <main>
-        <Outlet context={{ handleProductToCart }}/>
+        <Outlet context={{ handleProductToCart, cart}}/>
       </main>
       <footer>
         <p>Made by Gianni</p>
