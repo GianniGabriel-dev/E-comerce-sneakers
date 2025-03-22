@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react"
 import { options } from "../config"
 import { Slider } from "./360_Slider";
+import { useOutletContext } from "react-router-dom";
 
 export const ProductContainer = ({id})=>{
     const [sneaker, setSneaker]= useState(null);
     const[error, setError]= useState(null)
     const[loading, setLoading]= useState(true)
     const [imagesLoaded, setImagesLoaded] = useState(false);
+
+    // Obtiene la función `handleProductToCart` del contexto del Outlet para manejar la adición de productos al carrito.
+    const { handleProductToCart } = useOutletContext(); 
+
     
     useEffect(()=>{
         //fetching of product by id of it
@@ -83,7 +88,7 @@ export const ProductContainer = ({id})=>{
                     <p>Buy now for:</p>
                     <p>{sneaker.avg_price.toFixed(2)}</p>
                     <div className="buttonContainer">
-                        <button>Add to cart</button>   {/**Me falta añadir un componente de elegir la cantidad de productos que quiero añadir a la cesta */}
+                        <button onClick={()=> handleProductToCart(sneaker.id)}>Add to cart</button>  {/**Me falta añadir un componente de elegir la cantidad de productos que quiero añadir a la cesta */}
                     </div>
                 </article>
                 {/*Si exsite una descripción, mostrarla, en caso de no ser así ocultarla */}

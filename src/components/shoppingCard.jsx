@@ -1,26 +1,21 @@
 import { errorUrl, options } from "../config";
 import {useEffect, useState} from "react"
-import { useNavigate } from "react-router-dom";
-import { addProduct } from "../utils/cart";
+import { useNavigate, useOutletContext } from "react-router-dom";
 export const ShoppingCard= () => {
     const [error, setError] = useState(null)
     const [sneakers, setSneakers]=useState([])
     const [loading, setLoading] = useState(true)
     const [page, setPage]=useState(1) 
-    const [cart, setCart]= useState([])
+    const navigate = useNavigate(); //se establece el useNavigate
+    const { handleProductToCart } = useOutletContext(); //
 
-    const handleProductToCart= (id)=>{
-        addProduct(id, cart, setCart)
+
+
+   //manejo del click que detecta a que producto haces click y te dirige a  la pagina donde aparece
+    const handleClick=(id, name)=>{
+        navigate(`/${name.split(" ").join("-")}/dp/${id}`);//navigate es igual que el link pero no hace falta usar un enlace de texto como tal, cada espacio del nombre es sustituido por un guion
         
     }
-    useEffect(()=>{
-        console.log(cart)
-    },[cart])
-    const navigate = useNavigate();
-        const handleClick=(id, name)=>{
-            navigate(`/${name.split(" ").join("-")}/dp/${id}`);//navigate es igual que el link pero no hace falta usar un enlace de texto como tal, cada espacio del nombre es sustituido por un guion
-            
-        }
 
     useEffect(()=>{ 
         const fetchSneakers = async()=>{
