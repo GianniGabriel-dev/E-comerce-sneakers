@@ -81,15 +81,18 @@ export const ProductContainer = ({id})=>{
                 </article>
                 <article>
                     <p>Buy now for:</p>
-                    <p>{sneaker.avg_price}</p>
+                    <p>{sneaker.avg_price.toFixed(2)}</p>
                     <div className="buttonContainer">
-                        <button>Add to cart</button>
+                        <button>Add to cart</button>   {/**Me falta añadir un componente de elegir la cantidad de productos que quiero añadir a la cesta */}
                     </div>
                 </article>
-                <article>
-                    <p>About this product</p>
-                    <p style={{textWrap:"wrap"}}>{sneaker.short_description}</p>
-                </article>
+                {/*Si exsite una descripción, mostrarla, en caso de no ser así ocultarla */}
+                {sneaker.short_description && (
+                    <article>
+                        <p>About this product</p>
+                        <p style={{ textWrap: "wrap" }}>{sneaker.short_description}</p>
+                    </article>
+                )}
             </section>
         </section>
     )

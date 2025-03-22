@@ -3,8 +3,10 @@ import { useState } from "react"
 export const Slider=({imageArray,image, productName})=>{
     const [index, setIndex]=useState(0)
     const [isMousePressed, setIsMousePressed] = useState(false);
+
+    //revisa el valor del input del rango y hace uso del useState para que cada vez que este cambie, cambie el indice del array de las iamgenes
     const slideImage = (e)=>{
-        const value = e.target.value;
+        const value = Number(e.target.value);//value devuelve una string y se convierte a un numero
         setTimeout(() => {
             setIndex(value);
           }, 100); 
@@ -50,15 +52,16 @@ export const Slider=({imageArray,image, productName})=>{
                 loading="lazy"
             />
             </figure>
-            <input 
-                type="range"
-                min={0}
-                max={imageArray.length-1} 
-                value={index}
-                className="slider"
-                style={{ display: imageArray.length > 0 ? "inline" : "none" }}
-                onChange={slideImage}
-            />
+            {imageArray.length>0 &&(
+                <input 
+                    type="range"
+                    min={0}
+                    max={imageArray.length-1} 
+                    value={index}
+                    className="slider"
+                    onChange={slideImage}
+                />
+            )}
         </section>
     )
 }

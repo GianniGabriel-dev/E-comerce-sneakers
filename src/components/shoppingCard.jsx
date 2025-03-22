@@ -1,12 +1,21 @@
 import { errorUrl, options } from "../config";
 import {useEffect, useState} from "react"
 import { useNavigate } from "react-router-dom";
+import { addProduct } from "../utils/cart";
 export const ShoppingCard= () => {
     const [error, setError] = useState(null)
     const [sneakers, setSneakers]=useState([])
     const [loading, setLoading] = useState(true)
-    const [page, setPage]=useState(65) 
+    const [page, setPage]=useState(1) 
+    const [cart, setCart]= useState([])
 
+    const handleProductToCart= (id)=>{
+        addProduct(id, cart, setCart)
+        
+    }
+    useEffect(()=>{
+        console.log(cart)
+    },[cart])
     const navigate = useNavigate();
         const handleClick=(id, name)=>{
             navigate(`/${name.split(" ").join("-")}/dp/${id}`);//navigate es igual que el link pero no hace falta usar un enlace de texto como tal, cada espacio del nombre es sustituido por un guion
@@ -52,13 +61,15 @@ export const ShoppingCard= () => {
         <section style={{display:"flex", flexWrap:"wrap"}}>
             {
                 sneakers.map((sneaker)=>(
-                    <article key={sneaker.id} onClick={()=> handleClick(sneaker.id, sneaker.title)} >
-                        <img style={{width:"300px", height:"200px"}} src={sneaker.image} alt={"Image of" + sneaker.title} />
-                        <section>
-                            <p>{sneaker.title}</p>
-                            <p>{`${sneaker.avg_price.toFixed(2)} €`}</p> {/**toFixed quita todos los demas decimales mostrando en este caso solo 2 */}
-                        </section>
-                        <button>Add to cart</button>
+                    <article key={sneaker.id} className="cardContainer"  >
+                        <article className="productInfo" onClick={()=> handleClick(sneaker.id, sneaker.title)}>
+                            <img style={{width:"300px", height:"200px"}} src={sneaker.image} alt={"Image of" + sneaker.title} />
+                            <section>
+                                <p>{sneaker.title}</p>
+                                <p>{`${sneaker.avg_price.toFixed(2)} €`}</p> {/**toFixed quita todos los demas decimales mostrando en este caso solo 2 */}
+                            </section>
+                        </article>
+                        <button onClick={()=>handleProductToCart(sneaker.id)}>Add to cart</button>
                     </article>
                 ))
             }

@@ -2,6 +2,7 @@ import './styles/App.css'
 import { Outlet } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'//navlink devuelve true o false si esta activo, esto me sirve paraestilizr el link si esta siendo usado
 
+
 function App() {
 
 
