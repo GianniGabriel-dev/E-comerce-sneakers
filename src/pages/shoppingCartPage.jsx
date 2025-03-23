@@ -1,16 +1,17 @@
+import { AddAndDeleteButtons } from "../components/addAndDeleteButtons";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 export const ShoppingCartPage = () => {
   const { cart, setCart } = useOutletContext();
+
 
   const navigate = useNavigate();
   
   const handleLink=(id, name)=>{
       navigate(`/${name.split(" ").join("-")}/dp/${id}`);
    }
-   
-   const deleteProduct=(productToRemove)=>{
-      setCart(cart.filter((product)=> product.id !== productToRemove.id)
-   )}
+
+
+
 
   return (
     <>
@@ -35,9 +36,11 @@ export const ShoppingCartPage = () => {
                </div>
               </div>
             </article>
-            <article className="addAndDeleteButtons">
-               <button onClick={()=> deleteProduct(product)}>Delete</button>
-            </article>
+            <AddAndDeleteButtons 
+               product={product}
+               cart={cart}
+               setCart={setCart}
+            />
           </article>
         ))}
       </section>
