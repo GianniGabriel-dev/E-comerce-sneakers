@@ -14,7 +14,7 @@ export const ShoppingCard= () => {
 
 
    //manejo del click que detecta a que producto haces click y te dirige a  la pagina donde aparece
-    const handleClick=(id, name)=>{
+    const handleLink=(id, name)=>{
         navigate(`/${name.split(" ").join("-")}/dp/${id}`);//navigate es igual que el link pero no hace falta usar un enlace de texto como tal, cada espacio del nombre es sustituido por un guion
         
     }
@@ -59,7 +59,7 @@ export const ShoppingCard= () => {
             {
                 sneakers.map((sneaker)=>(
                     <article key={sneaker.id} className="cardContainer"  >
-                        <article className="productInfo" onClick={()=> handleClick(sneaker.id, sneaker.title)}>
+                        <article className="productInfo" onClick={()=> handleLink(sneaker.id, sneaker.title)}>
                             <img style={{width:"300px", height:"200px"}} src={sneaker.image} alt={"Image of" + sneaker.title} />
                             <section>
                                 <p>{sneaker.title}</p>

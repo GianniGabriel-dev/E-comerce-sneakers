@@ -37,7 +37,7 @@ function App() {
         </nav>
       </header>
       <main>
-        <Outlet context={{ handleProductToCart, cart}}/>
+        <Outlet context={{ handleProductToCart, cart, setCart}}/>
       </main>
       <footer>
         <p>Made by Gianni</p>
