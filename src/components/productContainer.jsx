@@ -88,7 +88,7 @@ export const ProductContainer = ({id})=>{
                     <p>Buy now for:</p>
                     <p>{sneaker.avg_price.toFixed(2)}</p>
                     <div className="buttonContainer">
-                        <button onClick={()=> handleProductToCart(sneaker.id)}>Add to cart</button>  {/**Me falta añadir un componente de elegir la cantidad de productos que quiero añadir a la cesta */}
+                        <button onClick={()=> handleProductToCart(sneaker.id , sneaker.image, sneaker.title, sneaker.avg_price)}>Add to cart</button>  {/**Me falta añadir un componente de elegir la cantidad de productos que quiero añadir a la cesta */}
                     </div>
                 </article>
                 {/*Si exsite una descripción, mostrarla, en caso de no ser así ocultarla */}

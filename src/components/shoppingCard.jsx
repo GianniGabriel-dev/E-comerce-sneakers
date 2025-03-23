@@ -1,11 +1,11 @@
 import { errorUrl, options } from "../config";
 import {useEffect, useState} from "react"
 import { useNavigate, useOutletContext } from "react-router-dom";
-export const ShoppingCard= () => {
+export const ShoppingCard= ({page}) => {
     const [error, setError] = useState(null)
     const [sneakers, setSneakers]=useState([])
     const [loading, setLoading] = useState(true)
-    const [page, setPage]=useState(1) 
+    
     const navigate = useNavigate(); //se establece el useNavigate
 
     // Obtiene la función `handleProductToCart` del contexto del Outlet para manejar la adición de productos al carrito.
@@ -55,22 +55,22 @@ export const ShoppingCard= () => {
     if(error) return <p>Upss.... The sneakers cant load</p>
     if (loading) return <p>Loading...</p>
     return(
-        <section style={{display:"flex", flexWrap:"wrap"}}>
-            {
-                sneakers.map((sneaker)=>(
-                    <article key={sneaker.id} className="cardContainer"  >
-                        <article className="productInfo" onClick={()=> handleLink(sneaker.id, sneaker.title)}>
-                            <img style={{width:"300px", height:"200px"}} src={sneaker.image} alt={"Image of" + sneaker.title} />
-                            <section>
-                                <p>{sneaker.title}</p>
-                                <p>{`${sneaker.avg_price.toFixed(2)} €`}</p> {/**toFixed quita todos los demas decimales mostrando en este caso solo 2 */}
-                            </section>
+            <section style={{display:"flex", flexWrap:"wrap"}}>
+                {
+                    sneakers.map((sneaker)=>(
+                        <article key={sneaker.id} className="cardContainer"  >
+                            <article className="productInfo" onClick={()=> handleLink(sneaker.id, sneaker.title)}>
+                                <img style={{width:"300px", height:"200px"}} src={sneaker.image} alt={"Image of" + sneaker.title} />
+                                <section>
+                                    <p>{sneaker.title}</p>
+                                    <p>{`${sneaker.avg_price.toFixed(2)} €`}</p> {/**toFixed quita todos los demas decimales mostrando en este caso solo 2 */}
+                                </section>
+                            </article>
+                            <button onClick={()=>handleProductToCart(sneaker.id , sneaker.image, sneaker.title, sneaker.avg_price)}>Add to cart</button>
                         </article>
-                        <button onClick={()=>handleProductToCart(sneaker.id , sneaker.image, sneaker.title, sneaker.avg_price)}>Add to cart</button>
-                    </article>
-                ))
-            }
-        </section>
+                    ))
+                }
+            </section>
     )
 }
 

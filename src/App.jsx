@@ -3,6 +3,10 @@ import { Outlet } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'//navlink devuelve true o false si esta activo, esto me sirve paraestilizr el link si esta siendo usado
 import { useState, useEffect } from 'react';
 import { addProduct } from './utils/cart';
+import { icons } from './assets/icons';
+import Logo from "./assets/logo.svg"
+import Cart from "./assets/cart.svg"
+import './styles/header.css'
 
 
 function App() {
@@ -24,16 +28,26 @@ function App() {
   return (
     <>
       <header>
+        <section className='logo'>
+          <p>SneakIt</p>
+          <img src={Logo} alt="logo of the page, its a sneaker" />
+        </section>
         <nav>
           <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>
-            Home Page
+            Home
           </NavLink>
           <NavLink to="shopPage" className={({ isActive }) => isActive ? "active-link" : ""}>
-            Shop Page{cartCount}
+            Shop
           </NavLink>
-          <NavLink to="cart" className={({ isActive }) => isActive ? "active-link" : ""}>
-            Cart Page
-          </NavLink>
+          <section className='cartLink'>
+            <NavLink  to="cart" className={({ isActive }) => isActive ? "active-link" : ""}>
+              <p>Cart</p>
+              <span>
+                {icons[0].cartSvg}
+                <span className='cartCountBubble'>{cartCount}</span>
+              </span>
+            </NavLink>
+          </section>
         </nav>
       </header>
       <main>

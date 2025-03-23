@@ -1,0 +1,62 @@
+header{
+    display: flex;
+    border-bottom: 2px solid gray ;
+    justify-content: space-between;
+    padding:0 1em 0 1em; 
+    font-size: 2.2em;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    font-weight: bold;
+    color: var(--terciary-font-color);
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+nav a{
+    color:black
+}
+nav a, nav a.active-link{
+    text-decoration: none;
+}
+.cartLink{
+    position: relative;
+}
+
+.cartLink a {
+    display: flex;
+    align-items: center; 
+    gap: 0.5em; 
+}
+
+
+.cartLink svg  {
+    width: 50px; 
+    height: 50px;
+}
+
+.cartLink .cartCountBubble {
+    position: absolute; 
+    top: 18px; 
+    right: -5px; 
+    background-color: rgb(77, 122, 68); 
+    color: white; 
+    font-size: 0.6em;
+    font-weight: bold;  
+    border-radius: 50%; 
+    width: 30px; 
+    height: 30px;  
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}
