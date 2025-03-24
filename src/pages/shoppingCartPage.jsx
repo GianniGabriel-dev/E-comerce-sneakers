@@ -1,7 +1,7 @@
 import { AddAndDeleteButtons } from "../components/addAndDeleteButtons";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 export const ShoppingCartPage = () => {
-  const { cart, setCart } = useOutletContext();
+  const { cart, setCart, totalPrice} = useOutletContext();
 
 
   const navigate = useNavigate();
@@ -10,18 +10,15 @@ export const ShoppingCartPage = () => {
       navigate(`/${name.split(" ").join("-")}/dp/${id}`);
    }
 
-
-
-
   return (
-    <>
-      <p>Mi cesta</p>
-      <section className="cartContainer">
+    <section className="cartContainer">
+      <section className="productCartContainer">
         {cart.map((product) => (
           <article key={product.id}>
             <article className="productInfo">
               <figure>
-                <img
+                <img 
+                  className="productPhoto"
                   src={product.img}
                   alt={`Image of sneakers: ${product.title}`}
                   style={{width:"150px", height:"75px"}}
@@ -31,8 +28,8 @@ export const ShoppingCartPage = () => {
               <div className="titleAndPrice">
                <p>{product.title.charAt(0).toUpperCase() + product.title.slice(1)}</p>
                <div className="price">
-                  <p>{(product.price * product.quantity).toFixed(2)}</p>
-                  <p>Price per unit {product.price.toFixed(2)}</p>
+                  <p>{(product.price * product.quantity).toFixed(2)+" €"}</p> {/*precio multiplicado por la cantidad del producto */}
+                  <p>{`Price per unit: ${product.price.toFixed(2)} €`}</p>  {/*precio de una sola unidad*/}
                </div>
               </div>
             </article>
@@ -44,7 +41,13 @@ export const ShoppingCartPage = () => {
           </article>
         ))}
       </section>
-      <Link to="/">Click here to go back</Link>
-    </>
+      <section className="paymentContainer">
+        <article className="priceContainer">
+          <p>Summmary</p>
+          <p>Est. Total: {totalPrice} </p>
+        </article>
+        <button>Proceed to checkout</button>
+      </section>
+    </section>
   );
 };

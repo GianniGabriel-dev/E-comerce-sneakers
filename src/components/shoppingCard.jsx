@@ -54,7 +54,7 @@ export const ShoppingCard= ({page}) => {
 
 
     if(error) return <p>Upss.... The sneakers cant load</p>
-    if (loading) return <p>Loading...</p>
+    if (loading) return <div className="loader"></div>
     return(
             <section className="container">
                 {
