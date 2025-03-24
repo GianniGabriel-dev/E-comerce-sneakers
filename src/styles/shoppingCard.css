@@ -6,7 +6,7 @@
 }
 .cardContainer{
     width: 400px;
-    height: 200x;
+    height: auto;
     padding: 1em;
     border-radius: 12px;
     border:1px solid gray;
@@ -41,4 +41,72 @@ button:hover {
     scale: 1.03;
 
 }
+.pageControl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    background-color: gainsboro;
+    border: 1px solid black;
+    border-radius: 1em;
+   
+}
 
+.pageControl article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 1em;
+    padding: 1em;
+}
+.pageControl article:not(.currentPage) {
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pageControl article:not(.currentPage):hover {
+    background-color: #4D7A44;
+    color: white;
+}
+.currentPage{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.pageControl .currentPage {
+    font-weight: bold;
+}
+
+.pageControl article svg {
+    width: 25px;
+    height: 25px;
+}
+
+.pageControl article:first-child {
+    border-radius: 1em 0 0 1em; /* Border radius para el artículo de la izquierda */
+}
+
+
+.pageControl article:last-child {
+    border-radius: 0 1em 1em 0; /* Border radius para el artículo de la derecha */
+}
+@media (max-width: 1024px){
+    .imgOfProduct{
+        width:300px;
+        height:200px;
+    }
+    .cardContainer{
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px){
+    .imgOfProduct{
+        width:250px;
+        height:150px;
+    }
+    .cardContainer{
+        width: 250px;
+    }
+}

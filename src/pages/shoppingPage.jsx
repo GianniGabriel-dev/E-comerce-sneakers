@@ -1,18 +1,33 @@
 import { Link, Outlet } from "react-router-dom";
 import { ShoppingCard } from "../components/shoppingCard";
 import { useState } from "react";
+import { icons } from "../assets/icons";
 
 export const ShopPage = () => {
    const [page, setPage]=useState(1) 
+//funciones que contralan la paginacion, y al ahcer click auto scrollea al comienzo
+   const prevPage=()=>{
+      if (page>1){
+         setPage(page-1)
+         window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+   }
+
+   const nextPage=()=>{
+      setPage(page+1)
+      window.scrollTo({ top: 0, behavior: "smooth" });
+   }
     return(
      <>
-        <p>this is the shop page</p>
         <ShoppingCard page={page} setPage={setPage}/>
         <section className="pageControl">
-            <article onClick={()=> page>1? setPage(page -1): page}>Prev</article>
-            <article onClick={()=> setPage(page +1)}>Next</article>
+            <article onClick={()=>prevPage()} >
+                  {icons[1].leftArrow}</article>
+            <article className="currentPage">{page}</article>
+            <article onClick={()=> nextPage()}>
+                  {icons[2].rightArrow}
+            </article>
         </section>
-        <Link to="/">Click here to go back</Link>
      </>
     )   
   }; 

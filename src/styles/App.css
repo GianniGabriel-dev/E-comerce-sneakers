@@ -5,7 +5,7 @@
   }
   main {
     padding: 2em; 
-
+gap: 2em;
     display: flex;
     place-items: center;
     flex-direction: column;
