@@ -1,3 +1,4 @@
+import "../styles/shoppingCard.css"
 import { errorUrl, options } from "../config";
 import {useEffect, useState} from "react"
 import { useNavigate, useOutletContext } from "react-router-dom";
@@ -55,18 +56,20 @@ export const ShoppingCard= ({page}) => {
     if(error) return <p>Upss.... The sneakers cant load</p>
     if (loading) return <p>Loading...</p>
     return(
-            <section style={{display:"flex", flexWrap:"wrap"}}>
+            <section className="container">
                 {
                     sneakers.map((sneaker)=>(
                         <article key={sneaker.id} className="cardContainer"  >
                             <article className="productInfo" onClick={()=> handleLink(sneaker.id, sneaker.title)}>
-                                <img style={{width:"300px", height:"200px"}} src={sneaker.image} alt={"Image of" + sneaker.title} />
+                                <figure>
+                                    <img className="imgOfProduct" src={sneaker.image} alt={"Image of" + sneaker.title} />
+                                </figure>
                                 <section>
-                                    <p>{sneaker.title}</p>
+                                    <p>{sneaker.title.charAt(0).toUpperCase() + sneaker.title.slice(1)}</p>
                                     <p>{`${sneaker.avg_price.toFixed(2)} €`}</p> {/**toFixed quita todos los demas decimales mostrando en este caso solo 2 */}
                                 </section>
                             </article>
-                            <button onClick={()=>handleProductToCart(sneaker.id , sneaker.image, sneaker.title, sneaker.avg_price)}>Add to cart</button>
+                            <button className="addToCartButton" onClick={()=>handleProductToCart(sneaker.id , sneaker.image, sneaker.title, sneaker.avg_price)}>Add to cart</button>
                         </article>
                     ))
                 }

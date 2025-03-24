@@ -82,7 +82,7 @@ export const ProductContainer = ({id})=>{
             />
             <section className="dataOfProduct">
                 <article>
-                    <p>{sneaker.title}</p>
+                    <p>{sneaker.title.charAt(0).toUpperCase() + sneaker.title.slice(1)}</p>
                 </article>
                 <article>
                     <p>Buy now for:</p>

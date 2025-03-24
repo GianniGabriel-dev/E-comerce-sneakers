@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import { addProduct } from './utils/cart';
 import { icons } from './assets/icons';
 import Logo from "./assets/logo.svg"
-import Cart from "./assets/cart.svg"
 import './styles/header.css'
 
 

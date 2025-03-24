@@ -29,7 +29,7 @@ export const ShoppingCartPage = () => {
                 />
               </figure>
               <div className="titleAndPrice">
-               <p>{product.title}</p>
+               <p>{product.title.charAt(0).toUpperCase() + product.title.slice(1)}</p>
                <div className="price">
                   <p>{(product.price * product.quantity).toFixed(2)}</p>
                   <p>Price per unit {product.price.toFixed(2)}</p>

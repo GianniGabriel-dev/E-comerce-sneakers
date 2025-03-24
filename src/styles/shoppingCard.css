@@ -1,0 +1,44 @@
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1em;
+    justify-content: center;
+}
+.cardContainer{
+    width: 400px;
+    height: 200x;
+    padding: 1em;
+    border-radius: 12px;
+    border:1px solid gray;
+    cursor:pointer;
+    font-weight: 600;
+}
+.imgOfProduct{
+    width:350px;
+    height:250px;
+}
+figure{
+    display: flex;
+    justify-content: center;
+}
+
+.addToCartButton{
+    width: 100%;
+    padding: 0.6em;
+    background-color: #4D7A44;
+    border:1px solid var(--terciary-font-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, scale 0.3s ease;
+    cursor: pointer;
+    
+}
+
+button:hover {
+   background-color: var(--terciary-font-color);
+    border:1px solid black;
+    scale: 1.03;
+
+}
+
