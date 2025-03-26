@@ -1,0 +1,82 @@
+.cartContainer{
+    display: flex;
+    gap:5em;
+    width: 100%;
+    font-weight: 600;
+}
+.productCartContainer{
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    border: 2px solid grey;
+    width: 60%;
+}
+/*le meto propiedades a todos los articulos de product cart container menos a los del not*/
+.productCartContainer article:not(.productCartInfo, .addAndDeleteButtons){
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    padding: 1em;
+}
+.productCartContainer article:last-child{
+    border: none;
+}
+.productCartInfo{
+    display: flex;
+}
+.productCartInfo img{
+    width: 150px;
+    height: 75px;
+}
+.titleAndPrice p{
+    margin: 0;
+    margin-bottom: 1em;
+
+}
+
+/*add and delete buttons*/
+.addAndDeleteButtons{
+    display: flex;
+}
+.deleteButton{
+    margin-right: 2em;
+    width: 45px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.deleteButton svg{
+    width: 36px;
+    transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
+}
+.controlQuantity, .deleteButton{
+    display: flex;
+    justify-content: center;
+    background-color: gainsboro;
+    border: 1px solid black;
+    border-radius: 12px;
+    height: 45px;
+}
+.controlQuantity div{
+    padding: 1.2em;
+    width: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.controlQuantity div:not(.productQuantity){
+    cursor: pointer;
+}
+.productQuantity {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+/*Hovers and animations*/
+.deleteButton:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+.deleteButton:hover svg {
+    transform: rotate(10deg); /* Gira el cubo de basura */
+    fill: red; /* Cambia a rojo para resaltar la acción */
+}

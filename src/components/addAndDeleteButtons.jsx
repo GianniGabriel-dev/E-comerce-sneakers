@@ -1,3 +1,4 @@
+import { icons } from "../assets/icons";
 export const AddAndDeleteButtons=({ product, cart, setCart})=>{ 
 
 
@@ -31,10 +32,10 @@ export const AddAndDeleteButtons=({ product, cart, setCart})=>{
       };
     return(
     <article className="addAndDeleteButtons">
-        <button onClick={()=> deleteProduct(product)}>Delete</button>
+        <button className="deleteButton" onClick={()=> deleteProduct(product)}>{icons[3].trash}</button>
         <section className="controlQuantity">
            <div onClick={()=> restQuantity(product)}>-</div>
-           <div>{product.quantity}</div>
+           <div className="productQuantity">{product.quantity}</div>
            <div onClick={()=> sumQuantity(product)}>+</div>
         </section>
      </article>

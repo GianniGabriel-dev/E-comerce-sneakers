@@ -1,5 +1,6 @@
 import { AddAndDeleteButtons } from "../components/addAndDeleteButtons";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import "../styles/ShoppingCartPage.css"
 export const ShoppingCartPage = () => {
   const { cart, setCart, totalPrice} = useOutletContext();
 
@@ -15,13 +16,11 @@ export const ShoppingCartPage = () => {
       <section className="productCartContainer">
         {cart.map((product) => (
           <article key={product.id}>
-            <article className="productInfo">
+            <article className="productCartInfo">
               <figure>
                 <img 
-                  className="productPhoto"
                   src={product.img}
                   alt={`Image of sneakers: ${product.title}`}
-                  style={{width:"150px", height:"75px"}}
                   onClick={()=> handleLink(product.id, product.title)}
                 />
               </figure>
@@ -44,7 +43,7 @@ export const ShoppingCartPage = () => {
       <section className="paymentContainer">
         <article className="priceContainer">
           <p>Summmary</p>
-          <p>Est. Total: {totalPrice} </p>
+          <p>Est. Total: {totalPrice.toFixed(2)} €</p>
         </article>
         <button>Proceed to checkout</button>
       </section>
