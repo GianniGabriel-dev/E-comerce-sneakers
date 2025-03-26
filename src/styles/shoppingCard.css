@@ -106,6 +106,9 @@ figure{
     .cardContainer{
         width: 300px;
     }
+    figure{
+        margin: 0;
+    }
 }
 
 @media (max-width: 768px){

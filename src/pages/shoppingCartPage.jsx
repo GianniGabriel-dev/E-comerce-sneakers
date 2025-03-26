@@ -1,12 +1,22 @@
 import { AddAndDeleteButtons } from "../components/addAndDeleteButtons";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import "../styles/ShoppingCartPage.css"
+import { useEffect, useState } from "react";
+
 export const ShoppingCartPage = () => {
   const { cart, setCart, totalPrice} = useOutletContext();
-
-
   const navigate = useNavigate();
-  
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+
+  //calcula cada vez la altura del header para aplicar luego un estilo sticky y que no se sobreponga con el header
+  useEffect(() => {
+    const header = document.querySelector("header");
+    if (header) {
+      setHeaderHeight(header.offsetHeight);
+    }
+  }, []);
+
   const handleLink=(id, name)=>{
       navigate(`/${name.split(" ").join("-")}/dp/${id}`);
    }
@@ -40,9 +50,9 @@ export const ShoppingCartPage = () => {
           </article>
         ))}
       </section>
-      <section className="paymentContainer">
+      <section className="paymentContainer" style={{ top: `${headerHeight + 30}px`, position: "sticky" }}>
         <article className="priceContainer">
-          <p>Summmary</p>
+          <p>Summary</p>
           <p>Est. Total: {totalPrice.toFixed(2)} €</p>
         </article>
         <button>Proceed to checkout</button>

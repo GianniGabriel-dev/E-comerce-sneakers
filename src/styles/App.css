@@ -11,6 +11,7 @@ gap: 2em;
     flex-direction: column;
 }
 
+/*animacion que aparece al hacer cargas*/
 .loader {
   width: 50px;
   padding: 8px;
