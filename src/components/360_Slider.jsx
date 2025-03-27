@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "../styles/productPage.css"
 
 export const Slider=({imageArray,image, productName})=>{
     const [index, setIndex]=useState(0)
@@ -39,7 +40,7 @@ export const Slider=({imageArray,image, productName})=>{
     };
 
     return(
-        <section>
+        <section className="imageAndSlider">
             <figure>
                 {/*hay productos que no tienen la galeria de imágenes de 360, si este es el caso, se muestra solo un imagen y se oculta el input*/}
                 <img draggable="false" src={imageArray.length > 0 ? imageArray[index] : image}  
@@ -48,7 +49,6 @@ export const Slider=({imageArray,image, productName})=>{
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseLeave}
                 alt={`Image of ${productName}`} 
-                style={{ cursor:"ew-resize", width:"300px"}}
                 loading="lazy"
             />
             </figure>

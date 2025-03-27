@@ -61,7 +61,7 @@ function App() {
           <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>
             Home
           </NavLink>
-          <NavLink to="shopPage" className={({ isActive }) => isActive ? "active-link" : ""}>
+          <NavLink to="shop" className={({ isActive }) => isActive ? "active-link" : ""}>
             Shop
           </NavLink>
           <section className='cartLink'>

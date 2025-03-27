@@ -81,21 +81,19 @@ export const ProductContainer = ({id})=>{
                 productName={sneaker.title}
             />
             <section className="dataOfProduct">
-                <article>
+                <article className="nameOfProduct">
                     <p>{sneaker.title.charAt(0).toUpperCase() + sneaker.title.slice(1)}</p>
                 </article>
-                <article>
+                <article className="buyProductContaienr">
                     <p>Buy now for:</p>
-                    <p>{sneaker.avg_price.toFixed(2)}</p>
-                    <div className="buttonContainer">
-                        <button onClick={()=> handleProductToCart(sneaker.id , sneaker.image, sneaker.title, sneaker.avg_price)}>Add to cart</button>  
-                    </div>
+                    <p>{sneaker.avg_price.toFixed(2)} €</p>
+                    <button className="addToCartButton" onClick={()=> handleProductToCart(sneaker.id , sneaker.image, sneaker.title, sneaker.avg_price)}>Add to cart</button>  
                 </article>
                 {/*Si exsite una descripción, mostrarla, en caso de no ser así ocultarla */}
                 {sneaker.short_description && (
                     <article>
-                        <p>About this product</p>
-                        <p style={{ textWrap: "wrap" }}>{sneaker.short_description}</p>
+                        <p className="aboutProductTitle">About this product</p>
+                        <p className="aboutProductText">{sneaker.short_description}</p>
                     </article>
                 )}
             </section>

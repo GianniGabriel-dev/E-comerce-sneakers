@@ -17,7 +17,7 @@ const routes = [
     children: [
       { index: true, element: <HomePage /> }, // El índice true establece la homepage como página principal
       {
-        path: "shopPage", 
+        path: "shop", 
         element: <ShopPage />, 
       },
       {
