@@ -17,7 +17,7 @@ const routes = [
     children: [
       { index: true, element: <HomePage /> }, // El índice true establece la homepage como página principal
       {
-        path: "shop", 
+        path: "shop/:brand?",  //el interrogante hace que sea un elemento opcional de la url, ya que puedes buscar por marcas o en general
         element: <ShopPage />, 
       },
       {

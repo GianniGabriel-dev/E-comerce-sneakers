@@ -17,6 +17,7 @@ function App() {
     const[cartCount, setCartCount] = useState(0)//estado que calcual la cantidad de productos que aparece en el icono del cart
     const[menuOpen, setMenuOpen]=useState(false)
     const[totalPrice, setTotalPrice]=useState(0);
+    const[brand, setBrand]=useState("");
 
     const handleProductToCart= (id, img, title, price)=>{
         addProduct(id, img, title, price, cart, setCart) //addProduct esta en utils
@@ -76,7 +77,7 @@ function App() {
         </nav>
       </header>
       <main>
-        <Outlet context={{ handleProductToCart, cart, setCart,totalPrice}}/>
+        <Outlet context={{ handleProductToCart, cart, setCart,totalPrice,brand, setBrand}}/>
       </main>
       <footer>
         <p>Made by Gianni</p>

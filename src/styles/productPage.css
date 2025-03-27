@@ -1,0 +1,106 @@
+/*Slider*/
+.imageAndSlider{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.imageAndSlider figure img{
+    width: 100%;
+    height: auto;
+    cursor: ew-resize
+}
+.slider {
+    appearance: none;
+    width: 50%;
+    height: 8px;
+    background: var(--secondary-font-color);
+    border-radius: 4px;
+    outline: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    z-index: 1;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #4D7A44;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+/*data of product*/
+.productContainer{
+    padding: 1em;
+    display: flex;
+    gap:2em;
+    align-items: center;
+    justify-content: center;
+}
+.dataOfProduct{
+    width: 100%;
+}
+.nameOfProduct p{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.buyProductContaienr{
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 1em;
+    margin-bottom: 2em;
+}
+.buyProductContaienr p:first-of-type{
+    margin: 0;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+.buyProductContaienr p:last-of-type{
+    margin: 0;
+    font-size: 1.3em;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+.aboutProductTitle{
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.aboutProductText{
+    font-size: 0.9em;
+}
+/*media querys*/
+@media (max-width:1024px) {
+    .productContainer{
+        flex-direction: column;
+    }
+    .imageAndSlider{
+        gap: 0.2em;
+    }
+    
+}
+@media (max-width: 1024px ) and (min-width:768px){
+    .nameOfProduct{
+        font-size: 1.3em;
+    }
+    .buyProductContaienr p:first-of-type{
+        font-size: 1.6em;
+    }
+    .buyProductContaienr p:last-of-type{
+        font-size: 2em;
+    }
+    .buyProductContaienr{
+        font-size: 1.3em;
+    }
+    .aboutProductTitle{
+        font-size: 1.3em;
+    }
+    .aboutProductText{
+        font-size: 1.1em;
+    }
+}

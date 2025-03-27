@@ -10,7 +10,7 @@ export const ShoppingCard= ({page}) => {
     const navigate = useNavigate(); //se establece el useNavigate
 
     // Obtiene la función `handleProductToCart` del contexto del Outlet para manejar la adición de productos al carrito.
-    const { handleProductToCart } = useOutletContext(); 
+    const { handleProductToCart, brand} = useOutletContext(); 
 
 
 
@@ -23,7 +23,7 @@ export const ShoppingCard= ({page}) => {
     useEffect(()=>{ 
         const fetchSneakers = async()=>{
             try {
-                const response = await fetch(`https://api.sneakersapi.dev/api/v3/stockx/products?limit=30&page=${page}&product_type=sneakers`, options);
+                const response = await fetch(`https://api.sneakersapi.dev/api/v3/stockx/products?limit=30&page=${page}&product_type=sneakers&brand=${brand}`, options);
                 
                 if (response.status >= 400) {
                     throw new Error("server error");
@@ -31,9 +31,9 @@ export const ShoppingCard= ({page}) => {
         
                 const data = await response.json();
                 console.log(data.data)
-                // a los datos se le concatenan 2 metodos, el flitro guarda solo los sneakers y que no tengan una url con errorres, el siguente map, añade a filtedData solo los atributos que se usen
+                // a los datos se le concatenan 3 condiciones, el flitro guarda solo los sneakers y que no tengan una url con errorres, el siguente map, añade a filtredData solo los atributos que se usen
                 const filtredData = data.data
-                    .filter(item => item.product_type === "sneakers" && !item.image.includes(errorUrl))
+                    .filter(item => item.product_type === "sneakers" && !item.image.includes(errorUrl) && item.avg_price !== null) //filtra los sneakers que tengan imagen y que no tengan precio null
                     .map(item => ({
                         id: item.id,
                         image: item.image,
@@ -50,7 +50,7 @@ export const ShoppingCard= ({page}) => {
             
         }
         fetchSneakers()
-    },[page])
+    },[page, brand])
 
 
     if(error) return <p>Upss.... The sneakers cant load</p>
