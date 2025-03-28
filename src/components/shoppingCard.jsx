@@ -62,7 +62,7 @@ export const ShoppingCard= ({page}) => {
                         <article key={sneaker.id} className="cardContainer"  >
                             <article className="productInfo" onClick={()=> handleLink(sneaker.id, sneaker.title)}>
                                 <figure>
-                                    <img className="imgOfProduct" src={sneaker.image} alt={"Image of" + sneaker.title} />
+                                    <img className="imgOfProduct" src={sneaker.image} alt={"Image of" + sneaker.title} loading="lazy" />
                                 </figure>
                                 <section>
                                     <p>{sneaker.title.charAt(0).toUpperCase() + sneaker.title.slice(1)}</p>

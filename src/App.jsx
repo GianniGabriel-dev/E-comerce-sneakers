@@ -80,7 +80,7 @@ function App() {
         <Outlet context={{ handleProductToCart, cart, setCart,totalPrice,brand, setBrand}}/>
       </main>
       <footer>
-        <p>Made by Gianni</p>
+        <p> Made by Gianni © {new Date().getFullYear()}</p>
       </footer>
     </>
   )

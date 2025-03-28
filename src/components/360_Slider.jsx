@@ -5,7 +5,7 @@ export const Slider=({imageArray,image, productName})=>{
     const [index, setIndex]=useState(0)
     const [isMousePressed, setIsMousePressed] = useState(false);
 
-    //revisa el valor del input del rango y hace uso del useState para que cada vez que este cambie, cambie el indice del array de las iamgenes
+    //Cambia el índice basado en el rango del input
     const slideImage = (e)=>{
         const value = Number(e.target.value);//value devuelve una string y se convierte a un numero
         setTimeout(() => {
@@ -44,13 +44,13 @@ export const Slider=({imageArray,image, productName})=>{
             <figure>
                 {/*hay productos que no tienen la galeria de imágenes de 360, si este es el caso, se muestra solo un imagen y se oculta el input*/}
                 <img draggable="false" src={imageArray.length > 0 ? imageArray[index] : image}  
-                onMouseMove={handleMouseMove}
-                onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseLeave}
-                alt={`Image of ${productName}`} 
-                loading="lazy"
-            />
+                    onMouseMove={handleMouseMove}
+                    onMouseDown={handleMouseDown}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseLeave}
+                    alt={`Image of ${productName}`} 
+                    loading="lazy"
+                />
             </figure>
             {imageArray.length>0 &&(
                 <input 

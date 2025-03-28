@@ -4,6 +4,7 @@
     flex-wrap:wrap;
     gap:1em;
     justify-content: center;
+    padding-top: 2em;
 }
 .cardContainer{
     width: 400px;
@@ -55,6 +56,7 @@ figure{
     background-color: gainsboro;
     border: 1px solid black;
     border-radius: 1em;
+
 }
 
 .pageControl article {
@@ -89,12 +91,12 @@ figure{
 }
 
 .pageControl article:first-child {
-    border-radius: 1em 0 0 1em; /* Border radius para el artículo de la izquierda */
+    border-radius: 1em 0 0 1em; /* Border radius para el artículo de la izquierda "<" */
 }
 
 
 .pageControl article:last-child {
-    border-radius: 0 1em 1em 0; /* Border radius para el artículo de la derecha */
+    border-radius: 0 1em 1em 0; /* Border radius para el artículo de la derecha ">" */
 }
 
 /*Media querys*/
