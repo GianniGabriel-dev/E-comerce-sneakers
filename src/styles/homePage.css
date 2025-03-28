@@ -1,107 +1,104 @@
-
-.homePageContainer{
-    width: 100%;
+.homePageContainer {
+  width: 100%;
 }
 
 .homePageHeader::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../assets/thumbnail.jpg'); 
-    background-size: cover;
-    background-position: center;
-    filter: blur(10px); 
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/thumbnail.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  z-index: -1;
 }
 .homePageHeader {
-    position: relative;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 3em;
-    font-weight: bolder;
-    color: rgb(255, 0, 55);
-    overflow: hidden; 
+  position: relative;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-weight: bolder;
+  color: rgb(255, 0, 55);
+  overflow: hidden;
 }
-.homePageHeader p{
-    text-align: center;
+.homePageHeader p {
+  text-align: center;
 }
-.homePageHeader button{
-    padding: 0.5em;
-    background-color: #4D7A44;
-    border:1px solid var(--terciary-font-color);
-    color: white;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+.homePageHeader button {
+  padding: 0.5em;
+  background-color: #4d7a44;
+  border: 1px solid var(--terciary-font-color);
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-
-.homePageContent{
-    padding-left: 3em;
-    padding-right:3em ;
+.homePageContent {
+  padding-left: 3em;
+  padding-right: 3em;
 }
-.homePageContent p{
-    font-size: 1.5em;
-    font-weight: 600;
+.homePageContent p {
+  font-size: 1.5em;
+  font-weight: 600;
 }
-.logoContainer{
-    gap: 2em;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.logoContainer {
+  gap: 2em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.logoOfCompany{
-    background-color: rgb(215, 233, 215);
-    display: flex;
-    align-items: center;
-    min-width: 300px;
-    height: 250px;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.logoOfCompany {
+  background-color: rgb(215, 233, 215);
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  height: 250px;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.logoOfCompany img{
-    width: 200px;
+.logoOfCompany img {
+  width: 200px;
 }
 /*media querry*/
 @media (max-width: 768px) {
-    .homePageHeader{
-        font-size: 2em;
-        font-weight: bold;
-        background-position: center;
-    }
-    .homePageHeader button{
-        padding: 0.5em
-    }
+  .homePageHeader {
+    font-size: 2em;
+    font-weight: bold;
+    background-position: center;
+  }
+  .homePageHeader button {
+    padding: 0.5em;
+  }
 }
 /*efectos*/
 
 .homePageHeader button:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .homePageHeader button:hover {
-    background-color: #3A5E33; 
-    transform: scale(1.05); 
+  background-color: #3a5e33;
+  transform: scale(1.05);
 }
 
 .logoOfCompany:hover {
-    transform: rotateX(10deg) rotateY(10deg) translateY(-5px);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  transform: rotateX(10deg) rotateY(10deg) translateY(-5px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-
 .logoOfCompany:active {
-    transform: scale(0.98);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+  transform: scale(0.98);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
 }

@@ -1,254 +1,247 @@
-.cartContainer{
-    display: flex;
-    gap:5em;
-    width: 100%;
-    font-weight: 600;
-    justify-content: space-around;
-    margin:2em;
+.cartContainer {
+  display: flex;
+  gap: 5em;
+  width: 100%;
+  font-weight: 600;
+  justify-content: space-around;
+  margin: 2em;
 }
-.productCartContainer{
-    display: flex;
-    flex-direction: column;
-    border-radius: 1em;
-    border: 2px solid grey;
-    width: 60%;
+.productCartContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1em;
+  border: 2px solid grey;
+  width: 60%;
 }
 /*le meto propiedades a todos los articulos de product cart container menos a los del not*/
-.productCartContainer article:not(.productCartInfo, .addAndDeleteButtons){
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid grey;
-    padding: 1em;
+.productCartContainer article:not(.productCartInfo, .addAndDeleteButtons) {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  padding: 1em;
 }
-.productCartContainer article:last-child{
-    border: none;
+.productCartContainer article:last-child {
+  border: none;
 }
-.productCartInfo{
-    display: flex;
+.productCartInfo {
+  display: flex;
 }
-.productCartInfo img{
-    width: 150px;
-    height: 100px;
-    cursor: pointer;
+.productCartInfo img {
+  width: 150px;
+  height: 100px;
+  cursor: pointer;
 }
-.titleAndPrice p{
-    margin: 0;
-    margin-bottom: 1em;
-
+.titleAndPrice p {
+  margin: 0;
+  margin-bottom: 1em;
 }
 
 /*add and delete buttons*/
-.addAndDeleteButtons{
-    display: flex;
+.addAndDeleteButtons {
+  display: flex;
 }
-.deleteButton{
-    margin-right: 2em;
-    width: 45px;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
+.deleteButton {
+  margin-right: 2em;
+  width: 45px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
-.deleteButton svg{
-    width: 36px;
-    transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
+.deleteButton svg {
+  width: 36px;
+  transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
-.controlQuantity, .deleteButton{
-    display: flex;
-    justify-content: center;
-    background-color: gainsboro;
-    border: 1px solid black;
-    border-radius: 12px;
-    height: 45px;
+.controlQuantity,
+.deleteButton {
+  display: flex;
+  justify-content: center;
+  background-color: gainsboro;
+  border: 1px solid black;
+  border-radius: 12px;
+  height: 45px;
 }
-.controlQuantity div{
-    padding: 1.2em;
-    width: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.controlQuantity div {
+  padding: 1.2em;
+  width: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.controlQuantity div:first-of-type{
-    border-radius: 12px 0 0 12px;
+.controlQuantity div:first-of-type {
+  border-radius: 12px 0 0 12px;
 }
-.controlQuantity div:last-of-type{
-    border-radius: 0 12px 12px 0;
+.controlQuantity div:last-of-type {
+  border-radius: 0 12px 12px 0;
 }
 
-.controlQuantity div:not(.productQuantity){
-    cursor: pointer;
+.controlQuantity div:not(.productQuantity) {
+  cursor: pointer;
 }
 .productQuantity {
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
-
 
 /*Payment container*/
-.paymentContainer{
-    display: flex;
-    flex-direction: column;
-    border-radius: 1em;
-    gap:1em;
-    border: 2px solid grey;
-    width: 20%;
-    height: 180px;
-    padding: 1em;
-    background-color: rgb(191, 233, 205);
+.paymentContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1em;
+  gap: 1em;
+  border: 2px solid grey;
+  width: 20%;
+  height: 180px;
+  padding: 1em;
+  background-color: rgb(191, 233, 205);
 }
-.paymentContainer p:first-of-type{
-    font-size: 2em;
-    margin-top: 0;
-    margin-bottom: 1em;
+.paymentContainer p:first-of-type {
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
-.paymentContainer button{
-    padding: 0.6em;
-    background-color: #4D7A44;
-    border:1px solid var(--terciary-font-color);
-    color: white;
-    font-weight: bold;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    cursor: pointer;
+.paymentContainer button {
+  padding: 0.6em;
+  background-color: #4d7a44;
+  border: 1px solid var(--terciary-font-color);
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
-
-
 
 /* Media Queries */
 @media (max-width: 1024px) {
-    .cartContainer{
-        gap:1em;
-    }
-    .productCartInfo{
-        flex-direction: column;
-    }
-    .productCartContainer article:not(.productCartInfo, .addAndDeleteButtons){
-        align-items: center;
-    }
-    .deleteButton{
-        height: 35px;
-        width:35px ;
-    }
+  .cartContainer {
+    gap: 1em;
+  }
+  .productCartInfo {
+    flex-direction: column;
+  }
+  .productCartContainer article:not(.productCartInfo, .addAndDeleteButtons) {
+    align-items: center;
+  }
+  .deleteButton {
+    height: 35px;
+    width: 35px;
+  }
 
-    .controlQuantity{
-        height: 35px;
-    }
-    .controlQuantity div{
-        padding: 0;
-        width: 1.6em;
-    }
-    .paymentContainer{
-        width: 30%;
-    }
+  .controlQuantity {
+    height: 35px;
+  }
+  .controlQuantity div {
+    padding: 0;
+    width: 1.6em;
+  }
+  .paymentContainer {
+    width: 30%;
+  }
 }
 
 @media (max-width: 768px) {
-    .cartContainer{
-        flex-direction: column;
-        align-items: center;
-    }
-    .productCartContainer{
-        width: 80%;
-        font-size: 1.2em;
-    }
-    .paymentContainer p {
-        font-size: 1.5em;
-    }
-    .productCartContainer article:not(.productCartInfo, .addAndDeleteButtons){
-        flex-direction: column;
-    }
-    .paymentContainer{
-        width: 90%;
-        border-radius: 0px;
-        padding: 1em;
-        position: sticky;
-        bottom: 0;
-    }
-    .deleteButton{
-        height: 40px;
-        width:40px ;
-    }
+  .cartContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .productCartContainer {
+    width: 80%;
+    font-size: 1.2em;
+  }
+  .paymentContainer p {
+    font-size: 1.5em;
+  }
+  .productCartContainer article:not(.productCartInfo, .addAndDeleteButtons) {
+    flex-direction: column;
+  }
+  .paymentContainer {
+    width: 90%;
+    border-radius: 0px;
+    padding: 1em;
+    position: sticky;
+    bottom: 0;
+  }
+  .deleteButton {
+    height: 40px;
+    width: 40px;
+  }
 
-    .controlQuantity{
-        height: 40px;
-    }
-    .controlQuantity div{
-        padding: 0.6em;
-        width: 1.6em;
-    }
-    .price{
-        display: flex;
-        gap: 1em;
-    }
-
+  .controlQuantity {
+    height: 40px;
+  }
+  .controlQuantity div {
+    padding: 0.6em;
+    width: 1.6em;
+  }
+  .price {
+    display: flex;
+    gap: 1em;
+  }
 }
 
 @media (max-width: 480px) {
-
-    .productCartContainer {
-        width: 90%;
-    }
-    .productCartInfo {
-        text-align: center;
-    }
-    .productCartInfo img {
-        width: 125px;
-        height: 90px;
-    }
-    .price{
-        flex-direction: column;
-        gap:0;
-    }
-    .price p{
-        margin-bottom: 0.3em;
-    }
-    .titleAndPrice p {
-        font-size: 0.8em;
-    }
-    .addAndDeleteButtons{
-        margin-top:0.7em;
-    }
-    .paymentContainer {
-        border: none;
-        border-top: 2px   solid grey;
-        border-bottom: 2px   solid grey;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        height: 150px;
-        gap: 0;
-        
-    }
-    .paymentContainer p:first-of-type {
-        font-size: 1.5em;
-    }
-
+  .productCartContainer {
+    width: 90%;
+  }
+  .productCartInfo {
+    text-align: center;
+  }
+  .productCartInfo img {
+    width: 125px;
+    height: 90px;
+  }
+  .price {
+    flex-direction: column;
+    gap: 0;
+  }
+  .price p {
+    margin-bottom: 0.3em;
+  }
+  .titleAndPrice p {
+    font-size: 0.8em;
+  }
+  .addAndDeleteButtons {
+    margin-top: 0.7em;
+  }
+  .paymentContainer {
+    border: none;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    height: 150px;
+    gap: 0;
+  }
+  .paymentContainer p:first-of-type {
+    font-size: 1.5em;
+  }
 }
 /*animaciones y efectos*/
 .deleteButton:hover {
-    transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 .deleteButton:hover svg {
-    transform: rotate(10deg); 
-    fill: red; 
+  transform: rotate(10deg);
+  fill: red;
 }
-.paymentContainer button:hover{
-    background-color: var(--terciary-font-color);
-    border:1px solid black;
+.paymentContainer button:hover {
+  background-color: var(--terciary-font-color);
+  border: 1px solid black;
 }
-.controlQuantity div:first-of-type:hover, 
+.controlQuantity div:first-of-type:hover,
 .controlQuantity div:last-of-type:hover {
-    background-color: #4D7A44;
-    color: white;
+  background-color: #4d7a44;
+  color: white;
 }
 
 /*mensaje que aparece cuando el carrito está vacío*/
-.emptyCart{
-    padding-top: 2em;
-    font-size: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.emptyCart {
+  padding-top: 2em;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.emptyCart a{
-    text-decoration: none;
-    color: #4D7A44;
-    cursor: pointer;
+.emptyCart a {
+  text-decoration: none;
+  color: #4d7a44;
+  cursor: pointer;
 }

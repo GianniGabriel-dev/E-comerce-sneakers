@@ -1,136 +1,134 @@
-header{
-    display: flex;
-    border-bottom: 2px solid gray ;
-    justify-content: space-between;
-    padding:0 1em 0 1em; 
-    font-size: 2.2em;
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 1000;
+header {
+  display: flex;
+  border-bottom: 2px solid gray;
+  justify-content: space-between;
+  padding: 0 1em 0 1em;
+  font-size: 2.2em;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
 }
 
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 0.4em;
-    font-weight: bold;
-    color: var(--terciary-font-color);
-    cursor: pointer;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: bold;
+  color: var(--terciary-font-color);
+  cursor: pointer;
 }
 .menu-toggle {
-    display: none; /* Oculto por defecto */
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
+  display: none; /* Oculto por defecto */
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
 }
-nav{
-    display: flex;
-    align-items: center;
-    gap: 2em;
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2em;
 }
-nav a{
-    color:black;
-    text-decoration: none;
+nav a {
+  color: black;
+  text-decoration: none;
 }
 
-nav a.active-link{
-    text-decoration: underline;
-    text-underline-offset: 8px;
+nav a.active-link {
+  text-decoration: underline;
+  text-underline-offset: 8px;
 }
-.cartLink{
-    position: relative;
+.cartLink {
+  position: relative;
 }
 
 .cartLink a {
-    display: flex;
-    align-items: center; 
-    gap: 0.5em; 
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
-
-.cartLink svg  {
-    width: 50px; 
-    height: 50px;
+.cartLink svg {
+  width: 50px;
+  height: 50px;
 }
 
 .cartLink .cartCountBubble {
-    position: absolute; 
-    top: 18px; 
-    right: -5px; 
-    background-color: rgb(77, 122, 68); 
-    color: white; 
-    font-size: 0.6em;
-    font-weight: bold;  
-    border-radius: 50%; 
-    width: 30px; 
-    height: 30px;  
-    display: flex; 
-    align-items: center;
-    justify-content: center; 
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+  position: absolute;
+  top: 18px;
+  right: -5px;
+  background-color: rgb(77, 122, 68);
+  color: white;
+  font-size: 0.6em;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 1024px){
-    header{
-        font-size: 1.8em;
-    }
-    
-    .cartLink svg  {
-        width: 40px; 
-        height: 40px;
-    }
-    .cartLink .cartCountBubble{
-        width:25px;
-        height: 25px;
-    }
+@media (max-width: 1024px) {
+  header {
+    font-size: 1.8em;
+  }
+
+  .cartLink svg {
+    width: 40px;
+    height: 40px;
+  }
+  .cartLink .cartCountBubble {
+    width: 25px;
+    height: 25px;
+  }
 }
 @media (max-width: 680px) {
-    .menu-toggle {
-        display: block; 
-    }
-    .menu-toggle:hover{
-        background-color: white;
-        border: none;
-        scale: 1;
-    }
+  .menu-toggle {
+    display: block;
+  }
+  .menu-toggle:hover {
+    background-color: white;
+    border: none;
+    scale: 1;
+  }
 
-    nav {
-        border-bottom: 2px solid grey;
-        flex-direction: column; 
-        position: absolute;
-        display: none;
-        background-color: rgb(202, 247, 176);
-        margin-top: 10px;
-        top: 80px;
-        right: 0;
-        font-size: 0.8em;
-       justify-content: space-around;
-        width: 100%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-       
-    }
+  nav {
+    border-bottom: 2px solid grey;
+    flex-direction: column;
+    position: absolute;
+    display: none;
+    background-color: rgb(202, 247, 176);
+    margin-top: 10px;
+    top: 80px;
+    right: 0;
+    font-size: 0.8em;
+    justify-content: space-around;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 
-    nav.open {
-        display: flex; 
-        flex-direction: row;
-    }
+  nav.open {
+    display: flex;
+    flex-direction: row;
+  }
 
-    .cartLink svg {
-        width: 40px;
-        height: 40px;
-    }
+  .cartLink svg {
+    width: 40px;
+    height: 40px;
+  }
 
-    .cartLink .cartCountBubble {
-        width: 25px;
-        height: 25px;
-        top: 10px; 
-        right: -8px; 
-    }
-    .cartLink a {
-        display: flex;
-        align-items: center; 
-        gap: 0.2em; 
-    }
+  .cartLink .cartCountBubble {
+    width: 25px;
+    height: 25px;
+    top: 10px;
+    right: -8px;
+  }
+  .cartLink a {
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+  }
 }

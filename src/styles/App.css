@@ -1,17 +1,17 @@
 .active-link {
-    font-weight: bold;
-    text-decoration: underline;
-    color: var(--terciary-font-color);
-  }
-
-  main {
-    gap: 2em;
-    display: flex;
-    place-items: center;
-    flex-direction: column;
+  font-weight: bold;
+  text-decoration: underline;
+  color: var(--terciary-font-color);
 }
-footer{
-  background-color: #4D7A44;
+
+main {
+  gap: 2em;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+}
+footer {
+  background-color: #4d7a44;
   margin-top: 2em;
   text-align: center;
   color: white;
@@ -28,13 +28,15 @@ footer{
   aspect-ratio: 1;
   border-radius: 50%;
   background: #25b09b;
-  --_m: 
-    conic-gradient(#0000 10%,#000),
-    linear-gradient(#000 0 0) content-box;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
   -webkit-mask: var(--_m);
-          mask: var(--_m);
+  mask: var(--_m);
   -webkit-mask-composite: source-out;
-          mask-composite: subtract;
+  mask-composite: subtract;
   animation: l3 1s infinite linear;
 }
-@keyframes l3 {to{transform: rotate(1turn)}}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
