@@ -1,0 +1,65 @@
+
+.homePageContainer{
+    width: 100%;
+}
+.homePageHeader{
+    background-position: center;
+    height: auto;
+    background-image: url('../assets/thumbnail.jpg'); 
+    height: 50vh;
+    background-attachment: fixed; ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bolder;
+    color: rgb(129, 221, 101);
+}
+.homePageHeader p{
+    text-align: center;
+}
+.homePageHeader button{
+    padding: 0.5em;
+    background-color: #4D7A44;
+    border:1px solid var(--terciary-font-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+.homePageContent{
+    padding-left: 3em;
+    padding-right:3em ;
+}
+.homePageContent p{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.logoContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
+    gap: 2em;
+}
+.logoOfCompany{
+    background-color: rgb(215, 233, 215);
+    display: flex;
+    align-items: center;
+    height: 250px;
+    justify-content: center;
+    cursor: pointer;
+}
+.logoOfCompany img{
+    width: 200px;
+}
+@media (max-width: 768px) {
+    .homePageHeader{
+        font-size: 2em;
+        font-weight: bold;
+        background-position: center;
+    }
+    .homePageHeader button{
+        padding: 0.5em
+    }
+}

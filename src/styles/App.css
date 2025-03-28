@@ -4,11 +4,18 @@
     color: var(--terciary-font-color);
   }
   main {
-    padding: 2em; 
-gap: 2em;
+    gap: 2em;
     display: flex;
     place-items: center;
     flex-direction: column;
+}
+footer{
+  background-color: #4D7A44;
+  margin-top: 2em;
+  text-align: center;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
 }
 
 /*animacion que aparece al hacer cargas*/

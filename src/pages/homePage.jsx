@@ -1,4 +1,5 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
+import "../styles/homePage.css"
 
 export const HomePage = () => {
    const navigate = useNavigate();
@@ -34,7 +35,7 @@ export const HomePage = () => {
                {
                   logos.map((logo, index)=>(
                      <div key={index} onClick={()=> handleSneaker(logo.brand)} className="logoOfCompany">
-                        <img style={{width:"200px"}} src={logo.url} alt={`image of the logo of ${logo.brand}`}/>
+                        <img  src={logo.url} alt={`image of the logo of ${logo.brand}`}/>
                      </div>
                   ))
                }
