@@ -1,14 +1,9 @@
-import { HomePage } from "../pages/homePage";
-import { ShoppingCartPage } from "../pages/shoppingCartPage";
-import { ShopPage } from "../pages/shoppingPage";
-import { ErrorPage } from "../pages/errorPage";
-import App from "../App";
-import { ProductPage } from "../pages/productPage";
-
-
-
-
-
+import { HomePage } from "/src/pages/homePage.jsx";
+import { ShoppingCartPage } from "/src/pages/shoppingCartPage.jsx";
+import { ShopPage } from "/src/pages/shoppingPage.jsx";
+import { ErrorPage } from "/src/pages/errorPage.jsx";
+import App from "/src/App.jsx";
+import { ProductPage } from "/src/pages/productPage.jsx";
 const routes = [
   {
     path: "/",

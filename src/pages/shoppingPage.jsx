@@ -1,7 +1,6 @@
-import { Link, Outlet } from "react-router-dom";
-import { ShoppingCard } from "../components/shoppingCard";
+import { ShoppingCard } from "/src/components/shoppingCard.jsx";
 import { useState } from "react";
-import { icons } from "../assets/icons";
+import { icons } from "/src/assets/icons.jsx";
 
 export const ShopPage = () => {
   const [page, setPage] = useState(1);

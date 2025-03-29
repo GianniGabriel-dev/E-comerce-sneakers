@@ -1,5 +1,5 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
-import "../styles/homePage.css";
+import "/src/styles/homePage.css";
 
 export const HomePage = () => {
   const navigate = useNavigate();

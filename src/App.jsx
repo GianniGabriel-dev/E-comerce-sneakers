@@ -2,10 +2,10 @@ import "./styles/App.css";
 import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom"; //navlink devuelve true o false si esta activo, esto me sirve paraestilizr el link si esta siendo usado
 import { useState, useEffect } from "react";
-import { addProduct } from "./utils/cart";
-import { icons } from "./assets/icons";
-import Logo from "./assets/logo.svg";
-import "./styles/header.css";
+import { addProduct } from "/src/utils/cart.js";
+import { icons } from "/src/assets/icons.jsx";
+import Logo from "/src/assets/logo.svg";
+import "/src//styles/header.css";
 
 function App() {
   //si anterirromente existe un carro guardado localmente, lo carga, si no devuelve un array vacio

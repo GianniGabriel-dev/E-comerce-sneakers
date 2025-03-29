@@ -1,7 +1,7 @@
-import { AddAndDeleteButtons } from "../components/addAndDeleteButtons";
+import { AddAndDeleteButtons } from "/src/components/addAndDeleteButtons.jsx";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import "/src/styles/shoppingCartPage.css";
-import "../styles/popUp.css";
+import "/src/styles/popUp.css";
 import { useEffect, useState } from "react";
 
 export const ShoppingCartPage = () => {

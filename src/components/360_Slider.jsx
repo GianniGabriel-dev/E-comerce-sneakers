@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/productPage.css";
+import "/src/styles/productPage.css";
 
 export const Slider = ({ imageArray, image, productName }) => {
   const [index, setIndex] = useState(0);

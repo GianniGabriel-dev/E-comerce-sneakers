@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { options } from "/src/configuration.js";
-import { Slider } from "./360_Slider";
+import { Slider } from "/src/components/360_Slider.jsx";
 import { useOutletContext } from "react-router-dom";
 
 export const ProductContainer = ({ id }) => {

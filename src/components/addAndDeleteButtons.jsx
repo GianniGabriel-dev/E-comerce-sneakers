@@ -1,4 +1,4 @@
-import { icons } from "../assets/icons";
+import { icons } from "/src/assets/icons.jsx";
 export const AddAndDeleteButtons = ({ product, cart, setCart }) => {
   const deleteProduct = (productToRemove) => {
     // filter devuelve filtrados todos los productos que tengan id diferente al producto que se quiere eliminar
