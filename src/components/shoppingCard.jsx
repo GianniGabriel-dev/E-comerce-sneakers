@@ -1,5 +1,5 @@
 import "../styles/shoppingCard.css";
-import { errorUrl, options } from "../config";
+import { errorUrl, options } from "/src/configuration.js";
 import { useEffect, useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 export const ShoppingCard = ({ page }) => {

@@ -1,6 +1,6 @@
 import { AddAndDeleteButtons } from "../components/addAndDeleteButtons";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
-import "../styles/ShoppingCartPage.css";
+import "/src/styles/shoppingCartPage.css";
 import "../styles/popUp.css";
 import { useEffect, useState } from "react";
 
@@ -58,11 +58,11 @@ export const ShoppingCartPage = () => {
                     </p>
                     <div className="price">
                       <p>
+                         {/*precio multiplicado por la cantidad del producto */}
                         {(product.price * product.quantity).toFixed(2) + " €"}
                       </p>{" "}
-                      {/*precio multiplicado por la cantidad del producto */}
+                         {/*precio de una sola unidad*/}
                       <p>{`Price per unit: ${product.price.toFixed(2)} €`}</p>{" "}
-                      {/*precio de una sola unidad*/}
                     </div>
                   </div>
                 </article>

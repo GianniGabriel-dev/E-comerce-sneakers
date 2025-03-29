@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { options } from "../config";
+import { options } from "/src/configuration.js";
 import { Slider } from "./360_Slider";
 import { useOutletContext } from "react-router-dom";
 
