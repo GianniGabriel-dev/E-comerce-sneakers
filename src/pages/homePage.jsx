@@ -13,15 +13,15 @@ export const HomePage = () => {
     navigate(`/shop/${brand}`);
   };
   const logos = [
-    { url: "src/assets/logos/jordan.webp", brand: "Jordan" },
-    { url: "src/assets/logos/adidas.webp", brand: "adidas" },
-    { url: "src/assets/logos/new-balance.webp", brand: "New Balance" },
-    { url: "src/assets/logos/nike.webp", brand: "Nike" },
-    { url: "src/assets/logos/vans.webp", brand: "Vans" },
-    { url: "src/assets/logos/puma.webp", brand: "Puma" },
-    { url: "src/assets/logos/converse.webp", brand: "Converse" },
-    { url: "src/assets/logos/fila.webp", brand: "Fila" },
-    { url: "src/assets/logos/reebok.webp", brand: "Reebok" },
+    { url: "/src/assets/logos/jordan.webp", brand: "Jordan" },
+    { url: "/src/assets/logos/adidas.webp", brand: "adidas" },
+    { url: "/src/assets/logos/new-balance.webp", brand: "New Balance" },
+    { url: "/src/assets/logos/nike.webp", brand: "Nike" },
+    { url: "/src/assets/logos/vans.webp", brand: "Vans" },
+    { url: "/src/assets/logos/puma.webp", brand: "Puma" },
+    { url: "/src/assets/logos/converse.webp", brand: "Converse" },
+    { url: "/src/assets/logos/fila.webp", brand: "Fila" },
+    { url: "/src/assets/logos/reebok.webp", brand: "Reebok" },
   ];
   return (
     <section className="homePageContainer">
