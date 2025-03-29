@@ -13,15 +13,15 @@ export const HomePage = () => {
     navigate(`/shop/${brand}`);
   };
   const logos = [
-    { url: "/public/logos/jordan.webp", brand: "Jordan" },
-    { url: "/public/logos/adidas.webp", brand: "adidas" },
-    { url: "/public/logos/new-balance.webp", brand: "New Balance" },
-    { url: "/public/logos/nike.webp", brand: "Nike" },
-    { url: "/public/logos/vans.webp", brand: "Vans" },
-    { url: "/public/logos/puma.webp", brand: "Puma" },
-    { url: "/public/logos/converse.webp", brand: "Converse" },
-    { url: "/public/logos/fila.webp", brand: "Fila" },
-    { url: "/public/logos/reebok.webp", brand: "Reebok" },
+    { url: "/logos/jordan.webp", brand: "Jordan" },
+    { url: "/logos/adidas.webp", brand: "adidas" },
+    { url: "/logos/new-balance.webp", brand: "New Balance" },
+    { url: "/logos/nike.webp", brand: "Nike" },
+    { url: "/logos/vans.webp", brand: "Vans" },
+    { url: "/logos/puma.webp", brand: "Puma" },
+    { url: "/logos/converse.webp", brand: "Converse" },
+    { url: "/logos/fila.webp", brand: "Fila" },
+    { url: "/logos/reebok.webp", brand: "Reebok" },
   ];
   return (
     <section className="homePageContainer">
