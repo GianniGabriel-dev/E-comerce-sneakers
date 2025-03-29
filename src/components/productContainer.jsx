@@ -43,11 +43,7 @@ export const ProductContainer = ({ id }) => {
       fetchProductById();
     }
   }, [id]);
-  useEffect(() => {
-    if (sneaker) {
-      console.log(sneaker);
-    }
-  }, [sneaker]);
+
 
   //verificar si todas las iamgenes del array se han cargado
   useEffect(() => {

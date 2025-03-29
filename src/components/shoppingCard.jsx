@@ -30,7 +30,6 @@ export const ShoppingCard = ({ page }) => {
         }
 
         const data = await response.json();
-        console.log(data.data);
         // a los datos se le concatenan 3 condiciones, el flitro guarda solo los sneakers y que no tengan una url con errorres, el siguente map, añade a filtredData solo los atributos que se usen
         const filtredData = data.data
           .filter(
