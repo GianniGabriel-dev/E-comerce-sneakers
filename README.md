@@ -2,6 +2,28 @@
 
 This is a fully frontend web page that i have made for practising my **React** and **frontend** skills, I'm using for getting all the data of the sneakers an API named  [**KicksDB**](https://kicks.dev/) You can take a look at the website [**here**](https://e-comerce-sneakers.vercel.app/) or watch some 🖼️ screenshots down bellow
 
+## 🖼️ Screenshots
+
+<p align="center">
+  <strong>Home</strong><br/>
+  <img src="assets/home.png" width="500" alt="Home page screenshot"/>
+</p>
+
+<p align="center">
+  <strong>Products</strong><br/>
+  <img src="assets/products.png" width="500" alt="Products list screenshot"/>
+</p>
+
+<p align="center">
+  <strong>Product Detail</strong><br/>
+  <img src="assets/product.png" width="500" alt="Product detail screenshot"/>
+</p>
+
+<p align="center">
+  <strong>Checkout (Mobile)</strong><br/>
+  <img src="assets/checkout.png" width="300" alt="Checkout mobile screenshot"/>
+</p>
+
 ## ✨ Features
 
 - 🛒 **Dynamic Product Listings**: Browse a collection of sneakers with detailed information.
@@ -47,25 +69,3 @@ VITE_KICKS_API_KEY=your_api_key_here
    npm run dev
    ```
 5. Open your browser and visit `http://localhost:5173`.
-
-## 🖼️ Screenshots
-
-<p align="center">
-  <strong>Home</strong><br/>
-  <img src="assets/home.png" width="500" alt="Home page screenshot"/>
-</p>
-
-<p align="center">
-  <strong>Products</strong><br/>
-  <img src="assets/products.png" width="500" alt="Products list screenshot"/>
-</p>
-
-<p align="center">
-  <strong>Product Detail</strong><br/>
-  <img src="assets/product.png" width="500" alt="Product detail screenshot"/>
-</p>
-
-<p align="center">
-  <strong>Checkout (Mobile)</strong><br/>
-  <img src="assets/checkout.png" width="300" alt="Checkout mobile screenshot"/>
-</p>
