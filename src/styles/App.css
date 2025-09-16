@@ -1,5 +1,5 @@
 .active-link {
-  font-weight: bold;
+  font-weight: 900;
   text-decoration: underline;
   color: var(--terciary-font-color);
 }

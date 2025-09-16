@@ -9,6 +9,7 @@
 .productCartContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border-radius: 1em;
   border: 2px solid grey;
   width: 60%;
@@ -39,6 +40,7 @@
 /*add and delete buttons*/
 .addAndDeleteButtons {
   display: flex;
+  align-items: center;
 }
 .deleteButton {
   margin-right: 2em;

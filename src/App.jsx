@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import { Outlet } from "react-router-dom";
+import {  Outlet, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom"; //navlink devuelve true o false si esta activo, esto me sirve paraestilizr el link si esta siendo usado
 import { useState, useEffect } from "react";
 import { addProduct } from "/src/utils/cart.js";
@@ -17,6 +17,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
   const [brand, setBrand] = useState("");
+  const navigate = useNavigate()
 
   const handleProductToCart = (id, img, title, price) => {
     addProduct(id, img, title, price, cart, setCart); //addProduct esta en utils
@@ -55,7 +56,7 @@ function App() {
   return (
     <>
       <header>
-        <section className="logo">
+        <section onClick={()=>navigate("/")} className="logo">
           <p>SneakIt</p>
           <img src={Logo} alt="logo of the page, its a sneaker" />
         </section>
